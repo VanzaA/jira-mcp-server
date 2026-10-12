@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# MCP launcher for any client with stdio transport (Claude Code, Cursor). stdout is reserved for the MCP protocol: everything else goes to stderr.
+set -euo pipefail
+
+IMAGE="jira-mcp:local"
+ENV_FILE="${JIRA_MCP_ENV_FILE:-$HOME/.config/jira-mcp/.env}"
+REPO_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)"
+
+if [ ! -f "$ENV_FILE" ]; then
+  {
+    echo "jira-mcp: no existe $ENV_FILE"
+    echo "Crealo con la URL de tu Jira y tu Personal Access Token (perfil de Jira → Personal Access Tokens):"
+    echo "  mkdir -p ~/.config/jira-mcp"
+    echo "  printf 'JIRA_URL=https://jira.tu-empresa.com\nJIRA_PAT=<tu-token>\n' > ~/.config/jira-mcp/.env"
+    echo "  chmod 600 ~/.config/jira-mcp/.env"
+  } >&2
+  exit 1
+fi
+
+if ! command -v docker >/dev/null 2>&1; then
+  echo "jira-mcp: Docker no está instalado o no está en el PATH. Instalalo y reiniciá el MCP desde tu cliente." >&2
+  exit 1
+fi
+
+# With the daemon half started, `docker info` can hang instead of failing.
+if ! docker_error="$(timeout 5 docker info 2>&1 >/dev/null)"; then
+  echo "jira-mcp: Docker no está corriendo. Inicialo y reiniciá el MCP desde tu cliente." >&2
+  if [ -n "$docker_error" ]; then
+    echo "  docker info: ${docker_error%%$'\n'*}" >&2
+  fi
+  exit 1
+fi
+
+if ! docker image inspect "$IMAGE" >/dev/null 2>&1; then
+  echo "jira-mcp: construyendo la imagen $IMAGE (solo la primera vez)..." >&2
+  docker build -t "$IMAGE" "$REPO_DIR" >&2
+fi
+
+exec docker run -i --rm --env-file "$ENV_FILE" "$IMAGE"

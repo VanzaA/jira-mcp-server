@@ -1,0 +1,13 @@
+{
+  "self": "https://jira.example.com/rest/api/2/issue/10123/worklog/20001",
+  "author": { "name": "avanzato", "key": "JIRAUSER10100", "displayName": "Agustin Vanzato", "active": true },
+  "updateAuthor": { "name": "avanzato", "key": "JIRAUSER10100", "displayName": "Agustin Vanzato", "active": true },
+  "comment": "Code review",
+  "created": "2026-10-12T14:05:00.000-0300",
+  "updated": "2026-10-12T14:05:00.000-0300",
+  "started": "2026-10-09T09:00:00.000-0300",
+  "timeSpent": "4h",
+  "timeSpentSeconds": 14400,
+  "id": "20001",
+  "issueId": "10123"
+}

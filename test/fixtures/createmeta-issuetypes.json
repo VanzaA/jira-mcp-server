@@ -1,0 +1,13 @@
+{
+  "maxResults": 100,
+  "startAt": 0,
+  "total": 5,
+  "isLast": true,
+  "values": [
+    { "self": "https://jira.example.com/rest/api/2/issuetype/10002", "id": "10002", "description": "A small, distinct piece of work.", "iconUrl": "https://jira.example.com/images/icons/task.svg", "name": "Task", "subtask": false },
+    { "self": "https://jira.example.com/rest/api/2/issuetype/10004", "id": "10004", "description": "A problem or error.", "iconUrl": "https://jira.example.com/images/icons/bug.svg", "name": "Bug", "subtask": false },
+    { "self": "https://jira.example.com/rest/api/2/issuetype/10001", "id": "10001", "description": "A user story.", "iconUrl": "https://jira.example.com/images/icons/story.svg", "name": "Story", "subtask": false },
+    { "self": "https://jira.example.com/rest/api/2/issuetype/10003", "id": "10003", "description": "A small piece of work that's part of a larger task.", "iconUrl": "https://jira.example.com/images/icons/subtask.svg", "name": "Sub-task", "subtask": true },
+    { "self": "https://jira.example.com/rest/api/2/issuetype/10200", "id": "10200", "description": "Research to reduce uncertainty.", "iconUrl": "https://jira.example.com/images/icons/spike.svg", "name": "Spike", "subtask": false }
+  ]
+}

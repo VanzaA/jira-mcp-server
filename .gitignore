@@ -1,0 +1,30 @@
+# --- local SDD tooling (not versioned) ---
+.claude/commands/opsx/
+.claude/commands/debug.md
+.claude/skills/documenter/
+openspec/
+knowledge/
+.githooks/
+
+# --- graphify ---
+graphify-out/
+.mcp.json
+scripts/graphify-mcp.sh
+scripts/check-graphify-freshness.sh
+
+# --- dependencies and build ---
+node_modules/
+dist/
+*.tsbuildinfo
+coverage/
+
+# --- secrets (JIRA_PAT) ---
+.env
+.env.*
+
+# --- editors and OS ---
+.claude/settings.local.json
+.vscode/
+.idea/
+*.swp
+.DS_Store

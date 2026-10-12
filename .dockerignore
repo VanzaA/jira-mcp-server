@@ -1,0 +1,14 @@
+node_modules
+dist
+.git
+.githooks
+.claude
+openspec
+knowledge
+graphify-out
+scripts
+test
+docs
+bin
+*.md
+.env

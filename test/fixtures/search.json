@@ -1,0 +1,45 @@
+{
+  "expand": "schema,names",
+  "startAt": 0,
+  "maxResults": 50,
+  "total": 2,
+  "issues": [
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "10123",
+      "self": "https://jira.example.com/rest/api/2/issue/10123",
+      "key": "PROJ-123",
+      "fields": {
+        "summary": "Add date filter to reports",
+        "issuetype": { "self": "https://jira.example.com/rest/api/2/issuetype/10001", "id": "10001", "name": "Story", "subtask": false },
+        "status": { "self": "https://jira.example.com/rest/api/2/status/3", "id": "3", "name": "In Progress", "statusCategory": { "id": 4, "key": "indeterminate", "name": "In Progress" } },
+        "priority": { "self": "https://jira.example.com/rest/api/2/priority/3", "id": "3", "name": "Medium" },
+        "assignee": { "self": "https://jira.example.com/rest/api/2/user?username=avanzato", "name": "avanzato", "key": "JIRAUSER10100", "displayName": "Agustin Vanzato", "active": true, "timeZone": "America/Argentina/Buenos_Aires" },
+        "duedate": "2026-10-16",
+        "updated": "2026-10-12T10:15:00.000-0300",
+        "customfield_10106": 3.0,
+        "customfield_10104": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@6a1b2c[id=41,rapidViewId=7,state=CLOSED,name=Sprint 41,startDate=2026-09-21T09:00:00.000-03:00,endDate=2026-10-02T18:00:00.000-03:00,completeDate=2026-10-02T18:30:00.000-03:00,activatedDate=2026-09-21T09:00:00.000-03:00,sequence=41,goal=,autoStartStop=false,synced=false]",
+          "com.atlassian.greenhopper.service.sprint.Sprint@7c8d9e[id=42,rapidViewId=7,state=ACTIVE,name=Sprint 42,startDate=2026-10-05T09:00:00.000-03:00,endDate=2026-10-16T18:00:00.000-03:00,completeDate=<null>,activatedDate=2026-10-05T09:00:00.000-03:00,sequence=42,goal=Reports,autoStartStop=false,synced=false]"
+        ]
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "10130",
+      "self": "https://jira.example.com/rest/api/2/issue/10130",
+      "key": "PROJ-130",
+      "fields": {
+        "summary": "Login fails with \"timeout\" error",
+        "issuetype": { "self": "https://jira.example.com/rest/api/2/issuetype/10004", "id": "10004", "name": "Bug", "subtask": false },
+        "status": { "self": "https://jira.example.com/rest/api/2/status/1", "id": "1", "name": "To Do", "statusCategory": { "id": 2, "key": "new", "name": "To Do" } },
+        "priority": { "self": "https://jira.example.com/rest/api/2/priority/2", "id": "2", "name": "High" },
+        "assignee": null,
+        "duedate": null,
+        "updated": "2026-10-11T18:00:00.000-0300",
+        "customfield_10106": null,
+        "customfield_10104": null
+      }
+    }
+  ]
+}

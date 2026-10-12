@@ -1,0 +1,37 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "10123",
+  "self": "https://jira.example.com/rest/api/2/issue/10123",
+  "key": "PROJ-123",
+  "fields": {
+    "summary": "Add date filter to reports",
+    "description": "h2. Context\nUsers need to filter reports by date.\n\n* From / to\n* Presets",
+    "issuetype": { "self": "https://jira.example.com/rest/api/2/issuetype/10001", "id": "10001", "name": "Story", "subtask": false },
+    "status": { "self": "https://jira.example.com/rest/api/2/status/1", "id": "1", "name": "To Do", "statusCategory": { "id": 2, "key": "new", "name": "To Do" } },
+    "priority": { "self": "https://jira.example.com/rest/api/2/priority/3", "id": "3", "name": "Medium" },
+    "assignee": { "self": "https://jira.example.com/rest/api/2/user?username=avanzato", "name": "avanzato", "key": "JIRAUSER10100", "displayName": "Agustin Vanzato", "active": true },
+    "reporter": { "self": "https://jira.example.com/rest/api/2/user?username=jperez", "name": "jperez", "key": "JIRAUSER10200", "displayName": "Juan Perez", "active": true },
+    "duedate": "2026-10-16",
+    "labels": ["backend", "reports"],
+    "subtasks": [
+      {
+        "id": "10124",
+        "key": "PROJ-124",
+        "self": "https://jira.example.com/rest/api/2/issue/10124",
+        "fields": {
+          "summary": "Tests",
+          "status": { "id": "1", "name": "To Do" },
+          "priority": { "id": "3", "name": "Medium" },
+          "issuetype": { "id": "10003", "name": "Sub-task", "subtask": true }
+        }
+      }
+    ],
+    "created": "2026-10-01T09:30:00.000-0300",
+    "updated": "2026-10-12T10:15:00.000-0300",
+    "timetracking": { "remainingEstimate": "5h", "timeSpent": "3h", "remainingEstimateSeconds": 18000, "timeSpentSeconds": 10800 },
+    "customfield_10106": 5.0,
+    "customfield_10104": [
+      { "id": 42, "name": "Sprint 42", "state": "ACTIVE", "boardId": 7, "goal": "Reports", "startDate": "2026-10-05T09:00:00.000-03:00", "endDate": "2026-10-16T18:00:00.000-03:00" }
+    ]
+  }
+}

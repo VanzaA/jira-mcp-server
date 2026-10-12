@@ -1,0 +1,19 @@
+{
+  "maxResults": 200,
+  "startAt": 0,
+  "total": 11,
+  "isLast": true,
+  "values": [
+    { "required": true, "schema": { "type": "project", "system": "project" }, "name": "Project", "fieldId": "project", "hasDefaultValue": false, "operations": ["set"], "allowedValues": [{ "id": "10000", "key": "PROJ", "name": "Project" }] },
+    { "required": true, "schema": { "type": "issuetype", "system": "issuetype" }, "name": "Issue Type", "fieldId": "issuetype", "hasDefaultValue": false, "operations": [] },
+    { "required": true, "schema": { "type": "string", "system": "summary" }, "name": "Summary", "fieldId": "summary", "hasDefaultValue": false, "operations": ["set"] },
+    { "required": true, "schema": { "type": "user", "system": "reporter" }, "name": "Reporter", "fieldId": "reporter", "autoCompleteUrl": "https://jira.example.com/rest/api/latest/user/search?username=", "hasDefaultValue": true, "operations": ["set"] },
+    { "required": false, "schema": { "type": "string", "system": "description" }, "name": "Description", "fieldId": "description", "hasDefaultValue": false, "operations": ["set"] },
+    { "required": false, "schema": { "type": "priority", "system": "priority" }, "name": "Priority", "fieldId": "priority", "hasDefaultValue": true, "operations": ["set"], "allowedValues": [{ "id": "1", "name": "Highest" }, { "id": "2", "name": "High" }, { "id": "3", "name": "Medium" }, { "id": "4", "name": "Low" }, { "id": "5", "name": "Lowest" }] },
+    { "required": false, "schema": { "type": "array", "items": "string", "system": "labels" }, "name": "Labels", "fieldId": "labels", "hasDefaultValue": false, "operations": ["add", "set", "remove"] },
+    { "required": false, "schema": { "type": "date", "system": "duedate" }, "name": "Due Date", "fieldId": "duedate", "hasDefaultValue": false, "operations": ["set"] },
+    { "required": false, "schema": { "type": "user", "system": "assignee" }, "name": "Assignee", "fieldId": "assignee", "hasDefaultValue": false, "operations": ["set"] },
+    { "required": false, "schema": { "type": "issuelink", "system": "parent" }, "name": "Parent", "fieldId": "parent", "hasDefaultValue": false, "operations": ["set"] },
+    { "required": false, "schema": { "type": "number", "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float", "customId": 10106 }, "name": "Story Points", "fieldId": "customfield_10106", "hasDefaultValue": false, "operations": ["set"] }
+  ]
+}

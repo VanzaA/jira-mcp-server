@@ -1,0 +1,8 @@
+[
+  { "id": "summary", "name": "Summary", "custom": false, "orderable": true, "navigable": true, "searchable": true, "clauseNames": ["summary"], "schema": { "type": "string", "system": "summary" } },
+  { "id": "duedate", "name": "Due Date", "custom": false, "orderable": true, "navigable": true, "searchable": true, "clauseNames": ["due", "duedate"], "schema": { "type": "date", "system": "duedate" } },
+  { "id": "labels", "name": "Labels", "custom": false, "orderable": true, "navigable": true, "searchable": true, "clauseNames": ["labels"], "schema": { "type": "array", "items": "string", "system": "labels" } },
+  { "id": "customfield_10100", "name": "Epic Link", "custom": true, "orderable": true, "navigable": true, "searchable": true, "clauseNames": ["cf[10100]", "Epic Link"], "schema": { "type": "any", "custom": "com.pyxis.greenhopper.jira:gh-epic-link", "customId": 10100 } },
+  { "id": "customfield_10104", "name": "Sprint", "custom": true, "orderable": true, "navigable": true, "searchable": true, "clauseNames": ["cf[10104]", "Sprint"], "schema": { "type": "array", "items": "string", "custom": "com.pyxis.greenhopper.jira:gh-sprint", "customId": 10104 } },
+  { "id": "customfield_10106", "name": "Story Points", "custom": true, "orderable": true, "navigable": true, "searchable": true, "clauseNames": ["cf[10106]", "Story Points"], "schema": { "type": "number", "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float", "customId": 10106 } }
+]
