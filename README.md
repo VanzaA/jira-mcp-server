@@ -150,7 +150,7 @@ Story Points and Sprint fields it found. For a full validation, follow
 | `update_issue` | Edits summary, description, due date, story points, priority and labels | "set the due date to Friday and 3 SP on PROJ-123" |
 | `assign_issue` | Assigns to you, to another user (by username) or unassigns | "assign PROJ-123 to me", "assign it to jdoe" |
 | `transition_issue` | Changes status by status or transition name, with a resolution when needed | "move PROJ-123 to In Review", "close it as Done" |
-| `log_work` | Logs work with a duration (`2h 30m` or `1.5`), date and comment | "log 4h yesterday on PROJ-123: PR review" |
+| `log_work` | Logs work with a duration (`2h 30m` or `1.5`), date, start time (`3:00 PM` or `15:00`; 09:00 if omitted) and comment | "log 4h yesterday on PROJ-123: PR review", "log 2h on PROJ-123 yesterday from 3 PM" |
 
 Priorities, issue types, transitions and resolutions are given **by name**. The server maps them to IDs
 and, if a name doesn't exist or is ambiguous, returns the valid options so the assistant can ask you.

@@ -29,6 +29,7 @@ describe("log_work", () => {
       key: "PROJ-123",
       time_spent: "2h 30m",
       started: "2026-10-12T14:30:00.000-0300",
+      start_time: "2:30 PM",
       time_zone: "America/Argentina/Buenos_Aires",
       url: `${BASE_URL}/browse/PROJ-123`,
     });
@@ -49,7 +50,39 @@ describe("log_work", () => {
       started: "2026-10-09T09:00:00.000-0300",
       comment: "Revisión de PR",
     });
-    expect(result).toMatchObject({ time_spent: "4h", started: "2026-10-09T09:00:00.000-0300", comment: "Revisión de PR" });
+    expect(result).toMatchObject({
+      time_spent: "4h",
+      started: "2026-10-09T09:00:00.000-0300",
+      start_time: "9:00 AM",
+      comment: "Revisión de PR",
+    });
+  });
+
+  it.each(["3:00 PM", "15:00"])("fecha y hora %s: esa hora de ese día, confirmada en AM/PM", async (start_time) => {
+    const jira = setup();
+
+    const result = data(await jira.run(logWork, { issue_key: "PROJ-123", duration: "1h", date: "2026-10-09", start_time }));
+    expect(jira.call("POST", "/issue/PROJ-123/worklog")!.body).toEqual({
+      timeSpent: "1h",
+      started: "2026-10-09T15:00:00.000-0300",
+    });
+    expect(result).toMatchObject({ started: "2026-10-09T15:00:00.000-0300", start_time: "3:00 PM" });
+  });
+
+  it("hora sin fecha → error sin request", async () => {
+    const jira = setup();
+    expect(text(await jira.run(logWork, { issue_key: "PROJ-123", duration: "1h", start_time: "3:00 PM" }))).toBe(
+      "Indicá la fecha (date, YYYY-MM-DD) junto con la hora de inicio.",
+    );
+    expect(jira.calls).toHaveLength(0);
+  });
+
+  it("hora inválida → ejemplos de formatos, sin request", async () => {
+    const jira = setup();
+    expect(
+      text(await jira.run(logWork, { issue_key: "PROJ-123", duration: "1h", date: "2026-10-09", start_time: "13 PM" })),
+    ).toMatch(/Hora inválida: "13 PM".*"9:00 AM".*"3:30 PM".*"15:00"/);
+    expect(jira.calls).toHaveLength(0);
   });
 
   it("duración inválida → ejemplos de formatos, sin request", async () => {
